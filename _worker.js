@@ -287,7 +287,7 @@ export default {
 					响应.headers.set('Set-Cookie', 'auth=; Path=/; Max-Age=0; HttpOnly; Secure; SameSite=Strict');
 					return 响应;
 				} else if (访问路径 === 'sub') {//处理订阅请求
-					const 订阅TOKEN = await MD5MD5(host + userID), 作为优选订阅生成器 = ['1', 'true'].includes(env.BEST_SUB) && url.searchParams.get('host') === 'example.com' && url.searchParams.get('uuid') === '00000000-0000-4000-8000-000000000000' && UA.toLowerCase().includes('tunnel (https://github.com/cmliu/edge');
+					const 订阅TOKEN = await MD5MD5(host + userID), 作为优选订阅生成器 = ['1', 'true'].includes(env.BEST_SUB) && url.searchParams.get('host') === 'example.com' && url.searchParams.get('uuid') === '00000000-0000-4000-8000-000000000000' && UA.toLowerCase().includes('tunnel (https://github.com/messageoom/edge');
 					const 请求TOKEN = url.searchParams.get('token');
 					const 用户客户端请求订阅 = 请求TOKEN === 订阅TOKEN;
 					const 当前日序号 = Math.floor(Date.now() / 86400000);
@@ -446,7 +446,7 @@ export default {
 							}
 							const 订阅转换URL = `${subAPI}/sub?target=${订阅类型}&url=${encodeURIComponent(url.protocol + '//' + url.host + '/sub?target=mixed&token=' + 今日订阅转换后端专属TOKEN + '&asOrg=' + 识别运营商(request) + (url.searchParams.has('sub') && url.searchParams.get('sub') != '' ? `&sub=${url.searchParams.get('sub')}` : ''))}&config=${encodeURIComponent(config_JSON.订阅转换配置.SUBCONFIG)}&emoji=${config_JSON.订阅转换配置.SUBEMOJI}&scv=${config_JSON.跳过证书验证}`;
 							try {
-								const response = await fetch(订阅转换URL, { headers: { 'User-Agent': 'Subconverter for ' + 订阅类型 + ' edge' + 'tunnel (https://github.com/cmliu/edge' + 'tunnel)' } });
+								const response = await fetch(订阅转换URL, { headers: { 'User-Agent': 'Subconverter for ' + 订阅类型 + ' edge' + 'tunnel (https://github.com/messageoom/edge' + 'tunnel)' } });
 								if (response.ok) {
 									订阅内容 = await response.text();
 									if (url.searchParams.has('surge') || ua.includes('surge')) 订阅内容 = Surge订阅配置文件热补丁(订阅内容, url.protocol + '//' + url.host + '/sub?token=' + 订阅TOKEN + '&surge', config_JSON);
@@ -5136,7 +5136,7 @@ async function 生成随机IP(request, count = 16, 指定端口 = -1) {
 		ct: 'CF电信优选',
 		cf: 'CF官方优选',
 	};
-	const cidr_url = 运营商文件标识 === 'cf' ? 'https://raw.githubusercontent.com/cmliu/cmliu/main/CF-CIDR.txt' : `https://raw.githubusercontent.com/cmliu/cmliu/main/CF-CIDR/${运营商文件标识}.txt`;
+	const cidr_url = 运营商文件标识 === 'cf' ? 'https://raw.githubusercontent.com/messageoom/edgetunnel/main/CF-CIDR.txt' : `https://raw.githubusercontent.com/messageoom/edgetunnel/main/CF-CIDR/${运营商文件标识}.txt`;
 	const cfname = 运营商名称映射[运营商文件标识] || 'CF官方优选';
 	const cfport = [443, 2053, 2083, 2087, 2096, 8443];
 	let cidrList = [];
@@ -5183,7 +5183,7 @@ async function 获取优选订阅生成器数据(优选订阅生成器HOST) {
 
 	try {
 		const response = await fetch(优选订阅生成器URL, {
-			headers: { 'User-Agent': 'v2rayN/edge' + 'tunnel (https://github.com/cmliu/edge' + 'tunnel)' }
+			headers: { 'User-Agent': 'v2rayN/edge' + 'tunnel (https://github.com/messageoom/edge' + 'tunnel)' }
 		});
 
 		if (!response.ok) {
